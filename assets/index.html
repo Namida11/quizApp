@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <div class="md-stepper-horizontal orange">
+      <div class="md-step active" id="step-1">
+        <div class="md-step-circle"><span>1</span></div>
+        <div class="md-step-title">Subjects</div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+      </div>
+      <div class="md-step" id="step-2">
+        <div class="md-step-circle"><span>2</span></div>
+        <div class="md-step-title">Questions</div>
+        <div class="md-step-optional"></div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+      </div>
+      <div class="md-step" id="step-3">
+        <div class="md-step-circle"><span>3</span></div>
+        <div class="md-step-title">Answers</div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+      </div>
+      <div class="md-step" id="step-4">
+        <div class="md-step-circle"><span>4</span></div>
+        <div class="md-step-title">Exam</div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+      </div>
+    </div>
+    <div class="screens">
+      <div class="screen" id="screen-1">
+        <div class="container mt-4">
+          <div class="row mx-5">
+            <div class="col-12 text-center">
+              <h3>Subjects</h3>
+            </div>
+          </div>
+          <div class="row mt-2 mx-0 border-bottom border-2">
+            <div class="col-3 d-grid">
+              <button
+                class="btn mb-3 btn-outline-warning"
+                data-bs-toggle="modal"
+                data-bs-target="#subjectAddEditModal"
+                id="btnSubjectAdd"
+              >
+                Add
+              </button>
+            </div>
+            <div class="col-3 offset-6">
+              <input
+                type="text"
+                class="form-control"
+                id="searchSubject"
+                placeholder="Search..."
+              />
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12">
+              <table
+                class="table table-striped table-hover table-bordered text-center"
+                id="tblSubject"
+              >
+                <thead class="table-warning">
+                  <tr>
+                    <th colspan="2"></th>
+                    <th>id</th>
+                    <th>Name</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="subjectAddEditModal"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="ubjectAddEditModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <input type="hidden" id="hfSubjectId" />
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                  Subjects
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="row mx-0 mt-3 d-flex justify-content-between">
+                  <div class="col-6">
+                    <label for="txtSubjectName">Name:</label>
+                  </div>
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      id="txtSubjectName"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  id="btnSubjectSave"
+                >
+                  Save
+                </button>
+                <button
+                  type="button"
+                  data-bs-dismiss="modal"
+                  class="btn btn-outline-warning"
+                  id="btnSubjectClose"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen" id="screen-2">Questions</div>
+      <div class="screen" id="screen-3">Answers</div>
+      <div class="screen" id="screen-4">Exam</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/assets/js/index.js"></script>
+  </body>
+</html>
